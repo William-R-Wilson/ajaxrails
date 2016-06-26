@@ -1,0 +1,11 @@
+<% flash.each do |f, msg| %>
+  <%= msg %>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field(:role, value: "") %>
+
+  <%= f.submit "Create User" %>
+<% end %>

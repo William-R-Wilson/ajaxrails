@@ -1,0 +1,11 @@
+<% @users.each do |u| %>
+  <ul>
+    <li><%= u.name %>
+        <%= form_for u do |f| %>
+          <%= f.label :role %>
+          <%= f.select :role, options_for_select(@roles, u.role) %>
+          <%= f.submit "Assign role" %>
+        <% end %>
+    </li>
+  </ul>
+<% end %>
