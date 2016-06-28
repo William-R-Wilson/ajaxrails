@@ -4,8 +4,7 @@
     <li><%= u.name %>
         <%= form_for u, remote: true do |f| %>
           <%= f.label :role %>
-          <%= f.select :role, options_for_select(@roles, u.role) %>
-          <%= f.submit "Assign role" %>
+          <%= f.select :role, options_for_select(@roles, u.role), {}, {class: "role", id: "#{u.id}"} %>
         <% end %>
     </li>
   </ul>

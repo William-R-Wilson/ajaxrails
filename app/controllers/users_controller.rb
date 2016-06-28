@@ -25,11 +25,20 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update_attributes(user_params)
+    puts "user role updated"
+    #respond_to do |format|
+    #  if @user.save
+    #    format.html { redirect_to 'users/index' }
+    #    format.js   {}
+    #    format.json {}
+    #  end
+    #end
   end
 
   def assign_roles
     @users = User.all
     @roles = ["", "milk drinker", "cookie dipper", "cookie counter"]
+
   end
 
   def show
@@ -39,7 +48,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :role)
+    params.permit(:id, :name, :role)
   end
 
 end
