@@ -1,7 +1,8 @@
+<%= link_to "All Users", users_path %>
 <% @users.each do |u| %>
   <ul>
     <li><%= u.name %>
-        <%= form_for u do |f| %>
+        <%= form_for u, remote: true do |f| %>
           <%= f.label :role %>
           <%= f.select :role, options_for_select(@roles, u.role) %>
           <%= f.submit "Assign role" %>

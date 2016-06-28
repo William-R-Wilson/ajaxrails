@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
   def index
     @users = User.all
   end
@@ -23,9 +24,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to :back
-    end
+    @user.update_attributes(user_params)
   end
 
   def assign_roles

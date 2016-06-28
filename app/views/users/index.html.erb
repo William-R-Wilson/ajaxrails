@@ -1,3 +1,5 @@
+<%= link_to "Assign Roles", assign_roles_path %>
+
 <h1>All Users<h2>
 <% @users.each do |u| %>
   <div><%= link_to u.name, user_path(u) %>, <%= u.role %></div>
