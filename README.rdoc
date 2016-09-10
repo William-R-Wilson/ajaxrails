@@ -3,4 +3,6 @@
 Ruby version 2.3.0
 Rails version 4.2.6
 
-Clone, bundle install, rake db:migrate
+Clone, bundle install, rake db:migrate, rake db:seed
+
+go to "Assign Roles" link to change user roles, then "All Users" to see the changes applied.
