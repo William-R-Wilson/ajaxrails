@@ -23,8 +23,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.update_attributes(user_params)
+    user = User.find(params[:id])
+    puts params.fetch(:role)
+    user.update_attributes(role: params.fetch(:role))
     puts "user role updated"
     #respond_to do |format|
     #  if @user.save
@@ -48,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:id, :name, :role)
+    params.require(:user).permit(:id, :name, :role)
   end
 
 end

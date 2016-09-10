@@ -4,7 +4,7 @@ $(function(){
       $.ajax({
         type: "PATCH",
         url: "users/" + this.id,
-        data: { role: $(".role").val() }
+        data: { role: $(this).val() }
       });
     });
 })
